@@ -1,0 +1,29 @@
+
+{
+  "pedidoId": "BB-20261120-12345",
+  "cliente": {
+    "nome": "João",
+    "endereco": "Rua das Flores, 100 - Centro"
+  },
+  "itens": [
+    {
+      "id": 1,
+      "nome": "X-Burger",
+      "quantidade": 2,
+      "preco": 22.90,
+      "subtotal": 45.80
+    },
+    {
+      "id": 10,
+      "nome": "Refrigerante Lata",
+      "quantidade": 1,
+      "preco": 6.00,
+      "subtotal": 6.00
+    }
+  ],
+  "subtotal": 51.80,
+  "taxaEntrega": 6.00,
+  "total": 57.80,
+  "pagamento": "pix",
+  "status": "Pendente"
+}

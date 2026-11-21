@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e8590c">
+  <meta name="description" content="Cardápio e pedidos online do Best Burger">
+  <title>Best Burger</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app">
+
+    <header class="topo">
+      <div class="banner"><img src="img/Capa.png" alt="Capa do Best Burger"></div>
+      <div class="logo"><img src="img/Logo.jpg" alt="Logo do Best Burger"></div>
+
+      <div class="dados-loja">
+        <h1>Best Burger</h1>
+
+        <button
+          type="button"
+          id="botaoTema"
+          class="botao-tema"
+          onclick="alternarTema()"
+          aria-label="Ativar modo escuro"
+          title="Alternar tema">
+          <span id="iconeTema" aria-hidden="true">☀️</span>
+        </button>
+
+        <div class="infos">
+          <span class="aberto-tag">Aberto agora</span>
+          <span>30 a 45 min</span>
+          <span>Entrega R$ 6,00</span>
+          <span>★ 4,8</span>
+        </div>
+      </div>
+    </header>
+
+    <nav class="abas" aria-label="Categorias do cardápio">
+      <button class="aba ativa" data-categoria="Lanches" onclick="trocarCategoria('Lanches')">Lanches</button>
+      <button class="aba" data-categoria="Combos" onclick="trocarCategoria('Combos')">Combos</button>
+      <button class="aba" data-categoria="Porções" onclick="trocarCategoria('Porções')">Porções</button>
+      <button class="aba" data-categoria="Bebidas" onclick="trocarCategoria('Bebidas')">Bebidas</button>
+    </nav>
+
+    <main id="lista">
+      <h2 class="titulo-cat" id="tituloCat">Lanches</h2>
+
+      <div class="lanche" data-id="1" data-categoria="Lanches" data-preco="22.90">
+        <div class="foto"><img src="img/X-Burguer.png" alt="X-Burger" onerror="this.style.display='none'"></div>
+        <div class="info-lanche">
+          <div>
+            <h3>X-Burger</h3>
+            <p>Pão, hambúrguer 150g, bacon, cheddar, queijo e maionese da casa</p>
+          </div>
+          <div class="rodape-lanche">
+            <span class="preco"></span>
+            <button class="btn-add" onclick="adicionarAoCarrinho(1)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lanche" data-id="2" data-categoria="Lanches" data-preco="27.90">
+        <div class="foto"><img src="img/X-Bacon.png" alt="X-Bacon" onerror="this.style.display='none'"></div>
+        <div class="info-lanche">
+          <div>
+            <h3>X-Bacon</h3>
+            <p>Pão, hambúrguer 150g, queijo, alface, tomate, bacon crocante e maionese da casa</p>
+          </div>
+          <div class="rodape-lanche">
+            <span class="preco"></span>
+            <button class="btn-add" onclick="adicionarAoCarrinho(2)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lanche" data-id="3" data-categoria="Lanches" data-preco="24.90">
+        <div class="foto"><img src="img/X-Salada.png" alt="X-Salada" onerror="this.style.display='none'"></div>
+        <div class="info-lanche">
+          <div>
+            <h3>X-Salada</h3>
+            <p>Pão, hambúrguer 150g, queijo, alface e tomate</p>
+          </div>
+          <div class="rodape-lanche">
+            <span class="preco"></span>
+            <button class="btn-add" onclick="adicionarAoCarrinho(3)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lanche" data-id="4" data-categoria="Lanches" data-preco="32.90">
+        <div class="foto"><img src="img/duplo.png" alt="Duplo Cheddar" onerror="this.style.display='none'"></div>
+        <div class="info-lanche">
+          <div>
+            <h3>Duplo Cheddar</h3>
+            <p>Dois hambúrgueres de 120g, queijo e cheddar cremoso</p>
+          </div>
+          <div class="rodape-lanche">
+            <span class="preco"></span>
+            <button class="btn-add" onclick="adicionarAoCarrinho(4)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lanche" data-id="5" data-categoria="Lanches" data-preco="26.90">
+        <div class="foto"><img src="img/FCBB.png" alt="Frango Crocante" onerror="this.style.display='none'"></div>
+        <div class="info-lanche">
+          <div>
+            <h3>Frango Crocante</h3>
+            <p>Filé de frango empanado</p>
+          </div>
+          <div class="rodape-lanche">
+            <span class="preco"></span>
+            <button class="btn-add" onclick="adicionarAoCarrinho(5)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lanche" data-id="6" data-categoria="Combos" data-preco="34.90">
+        <div class="foto"><img src="img/Combo1.png" alt="Combo X-Burger" onerror="this.style.display='none'"></div>
+        <div class="info-lanche">
+          <div>
+            <h3>Combo X-Burger</h3>
+            <p>X-Burger + Porção batata frita + refrigerante lata</p>
+          </div>
+          <div class="rodape-lanche">
+            <span class="preco"></span>
+            <button class="btn-add" onclick="adicionarAoCarrinho(6)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lanche" data-id="7" data-categoria="Combos" data-preco="44.90">
+        <div class="foto"><img src="img/Combo2.png" alt="Combo Duplo Cheddar" onerror="this.style.display='none'"></div>
+        <div class="info-lanche">
+          <div>
+            <h3>Combo Duplo Cheddar</h3>
+            <p>Duplo Cheddar + Porção batata frita + refrigerante lata</p>
+          </div>
+          <div class="rodape-lanche">
+            <span class="preco"></span>
+            <button class="btn-add" onclick="adicionarAoCarrinho(7)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lanche" data-id="8" data-categoria="Porções" data-preco="16.90">
+        <div class="foto"><img src="img/Batatas.png" alt="Batata Frita" onerror="this.style.display='none'"></div>
+        <div class="info-lanche">
+          <div>
+            <h3>Batata Frita</h3>
+            <p>Porção de 300g com sal e orégano</p>
+          </div>
+          <div class="rodape-lanche">
+            <span class="preco"></span>
+            <button class="btn-add" onclick="adicionarAoCarrinho(8)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lanche" data-id="9" data-categoria="Porções" data-preco="18.90">
+        <div class="foto"><img src="img/onion-rings.png" alt="Onion Rings" onerror="this.style.display='none'"></div>
+        <div class="info-lanche">
+          <div>
+            <h3>Onion Rings</h3>
+            <p>Anéis de cebola empanados, 20 unidades</p>
+          </div>
+          <div class="rodape-lanche">
+            <span class="preco"></span>
+            <button class="btn-add" onclick="adicionarAoCarrinho(9)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lanche" data-id="10" data-categoria="Bebidas" data-preco="6.00">
+        <div class="foto"><img src="img/refrigerante.png" alt="Refrigerante Lata" onerror="this.style.display='none'"></div>
+        <div class="info-lanche">
+          <div>
+            <h3>Refrigerante Lata</h3>
+            <p>350ml - Coca, Guaraná ou Sprite</p>
+          </div>
+          <div class="rodape-lanche">
+            <span class="preco"></span>
+            <button class="btn-add" onclick="adicionarAoCarrinho(10)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lanche" data-id="11" data-categoria="Bebidas" data-preco="9.00">
+        <div class="foto"><img src="img/Sucos.png" alt="Suco Natural" onerror="this.style.display='none'"></div>
+        <div class="info-lanche">
+          <div>
+            <h3>Suco Natural</h3>
+            <p>400ml - laranja, limão ou maracujá</p>
+          </div>
+          <div class="rodape-lanche">
+            <span class="preco"></span>
+            <button class="btn-add" onclick="adicionarAoCarrinho(11)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lanche" data-id="12" data-categoria="Bebidas" data-preco="17.90">
+        <div class="foto"><img src="img/Milkshake.png" alt="Milk-shake" onerror="this.style.display='none'"></div>
+        <div class="info-lanche">
+          <div>
+            <h3>Milk-shake</h3>
+            <p>400ml - chocolate, morango ou ovomaltine</p>
+          </div>
+          <div class="rodape-lanche">
+            <span class="preco"></span>
+            <button class="btn-add" onclick="adicionarAoCarrinho(12)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div id="barraCarrinho">
+    <button type="button" id="btnVerCarrinho" onclick="abrirCarrinho()" aria-label="Abrir carrinho">
+      <span id="qtdBarra" aria-live="polite">0 itens</span>
+      <span>Ver carrinho</span>
+      <span id="totalBarra">R$ 0,00</span>
+    </button>
+  </div>
+
+  <div id="fundoEscuro" onclick="fecharCarrinho()"></div>
+
+  <aside id="painel" role="dialog" aria-modal="true" aria-label="Seu pedido">
+
+    <div id="telaPedido">
+      <div class="cab-painel">
+        <h2>Seu pedido</h2>
+        <button type="button" id="btnFechar" aria-label="Fechar carrinho" onclick="fecharCarrinho()">×</button>
+      </div>
+
+      <div id="itensCarrinho"></div>
+
+      <div class="resumo">
+        <div class="linha"><span>Subtotal</span><span id="subtotal">R$ 0,00</span></div>
+        <div class="linha"><span>Taxa de entrega</span><span id="taxa">R$ 0,00</span></div>
+        <div class="linha total"><span>Total</span><span id="totalFinal">R$ 0,00</span></div>
+      </div>
+
+      <input class="campo" id="campoNome" placeholder="Seu nome" autocomplete="name">
+      <input class="campo" id="campoEndereco" placeholder="Endereço de entrega (rua, número, bairro)" autocomplete="street-address">
+
+      <select class="campo" id="campoPagamento">
+        <option value="pix">Pix</option>
+        <option value="credito">Cartão de crédito</option>
+        <option value="debito">Cartão de débito</option>
+        <option value="dinheiro">Dinheiro</option>
+      </select>
+
+      <div id="msgErro"></div>
+      <button type="button" class="btn-principal" onclick="finalizarPedido()">Finalizar pedido</button>
+    </div>
+
+    <div id="telaConfirmacao" class="confirmado" hidden>
+      <h2 id="tituloConfirmacao"></h2>
+      <p id="textoConfirmacao"></p>
+      <button type="button" class="btn-principal" onclick="fecharCarrinho()">Voltar ao cardápio</button>
+    </div>
+
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
